@@ -4,20 +4,23 @@
     ViewBag.Title = "AddEquipment";
 }
 
+@{
+    List<SelectListItem> mySelectList = new List<SelectListItem>();
+    foreach (var item in ViewBag.List)
+    {
+        mySelectList.Add(new SelectListItem() { Text = item.Name, Value = item.Name });
+    }
+
+}
+
+
 <form action="AddEquip" method="post">
     <table border="12" cellpadding="12" cellspacing="12" style="text-align:left" id='sampleform' action="cgi-bin/formmail.pl" method="post">
         <tbody>
             <tr>
                 <td>Category:</td>
                 <td>
-                    @Html.LabelFor(class1 => class1.Category, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        <select name="category">
-                            @foreach (var item in ViewBag.List)
-                            {
-                                <option value="@item.Name">@item.Name</option>
-                            }
-                        </select>
+                    @Html.DropDownListFor(class1 => class1.Category, mySelectList, "--select category--")
                 </td>
             </tr>
             <tr>

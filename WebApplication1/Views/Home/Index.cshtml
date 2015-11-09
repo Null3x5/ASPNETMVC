@@ -25,18 +25,18 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in ViewBag.list)
+        @for (int i = 0; i < ViewBag.list.Count; i++)
         {
-            <tr>
-                <td>@item.id</td>
-                <td>@item.Code</td>
-                <td>@item.Name</td>
-                <td>@item.Category</td>
-
-
-                <td><a href="/Home/ItemInfo/@item.id">View</a></td>
+            <tr class="darkrow">
+                <td>@ViewBag.list[i].id</td>
+                <td>@ViewBag.list[i].Code</td>
+                <td>@ViewBag.list[i].Name</td>
+                <td>@ViewBag.list[i].Category</td>
+                <td><a href="/Home/ItemInfo/@ViewBag.list[i].id">View</a></td>
             </tr>
         }
+
+       
     </tbody>
 </table>
 <font color="@ViewBag.color">@ViewBag.code </font>
