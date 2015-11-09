@@ -13,9 +13,9 @@
 
 }
 
-
+<h4 class="text-center">Add Equipment</h4>
 <form action="AddEquip" method="post">
-    <table border="12" cellpadding="12" cellspacing="12" style="text-align:left" id='sampleform' action="cgi-bin/formmail.pl" method="post">
+    <table class="table table-hover table-bordered" id='sampleform' action="cgi-bin/formmail.pl" method="post">
         <tbody>
             <tr>
                 <td>Category:</td>
@@ -36,7 +36,7 @@
                 <td>@Html.TextBoxFor(class1 => class1.Description)</td>
             </tr>
             <tr>
-                <td colspan="2" rowspan="1"><input name="add" type="submit" value="Add" /></td>
+                <td colspan="2" rowspan="1"><input name="add" type="submit" value="Add" class="btn btn-success"/></td>
             </tr>
         </tbody>
     </table>
