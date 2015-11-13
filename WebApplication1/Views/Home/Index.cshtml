@@ -11,9 +11,10 @@
     <meta name="viewport" content="width=device-width" />
 </head>
 </br>
-<table class="table" name="something">
+<h4 class="text-center">Inventory</h4>
+<table class="table table-striped" name="something">
     <thead>
-        <a href="/Home/AddCat">Add Category</a>||<a href="/Home/AddEquipment">Add Equipment</a>
+        <a href="/Home/AddCat" class="btn btn-success">Add Category</a> <a href="/Home/AddEquipment" class="btn btn-warning">Add Equipment</a>
 
         <tr>
             <th scope="col">ID</th>
@@ -25,18 +26,18 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in ViewBag.list)
+        @for (int i = 0; i < ViewBag.list.Count; i++)
         {
             <tr>
-                <td>@item.id</td>
-                <td>@item.Code</td>
-                <td>@item.Name</td>
-                <td>@item.Category</td>
-
-
-                <td><a href="/Home/ItemInfo/@item.id">View</a></td>
+                <td>@ViewBag.list[i].id</td>
+                <td>@ViewBag.list[i].Code</td>
+                <td>@ViewBag.list[i].Name</td>
+                <td>@ViewBag.list[i].Category</td>
+                <td><a href="/Home/ItemInfo/@ViewBag.list[i].id" class="btn btn-info">View</a></td>
             </tr>
         }
+
+       
     </tbody>
 </table>
 <font color="@ViewBag.color">@ViewBag.code </font>
